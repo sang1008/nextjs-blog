@@ -1,0 +1,19 @@
+body[mode="light"] {
+  --body-bg: #fafafa;
+  --link-color: #8e2a2a;
+  --post-list-text-color: dimgray;
+  --text-color: rgb(175, 176, 177);
+  --sidebar-bg: radial-gradient(
+    circle,
+    rgb(155, 42, 50) 0%,
+    rgb(46, 35, 35) 100%
+  );
+}
+
+body[mode="dark"] {
+  --body-bg: #1b1b1e;
+  --link-color: #cf6c89;
+  --post-list-text-color: rgb(175, 176, 177);
+  --text-color: #333333;
+  --sidebar-bg: radial-gradient(circle, #0a0a0a 0%, #1a1313 100%);
+}
