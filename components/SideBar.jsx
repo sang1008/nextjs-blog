@@ -4,8 +4,7 @@ import { useEffect, useState } from 'react';
 
 import avatar from '../static/images/avatar.jpeg'
 
-export default function SideBar(){
-
+export default function SideBar(props){
 	const [theme, setTheme] = useState('')
 	const [darkScheme, setDarkScheme] = useState(false)
 
@@ -53,7 +52,7 @@ export default function SideBar(){
 		{href: '/categories', name: '分类'},
 		{href: '/archives', name: '归档'},
 		{href: '/friend', name: '友人帐'},
-		{href: '/tags', name: '标签强'},
+		{href: '/tags', name: '标签墙'},
 	])
 
 	return (
@@ -69,7 +68,7 @@ export default function SideBar(){
 						nav.map(item=>{
 							return (
 								<li key={item.name}>
-									<Link href={item.href} as={item.href} shallow>{ item.name }</Link>
+									<Link href={item.href} as={item.href}><a>{ item.name }</a></Link>
 								</li>
 							)
 						})
@@ -79,3 +78,4 @@ export default function SideBar(){
 		</div>
 	)
 }
+

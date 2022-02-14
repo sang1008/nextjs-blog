@@ -1,13 +1,21 @@
-import Head from 'next/head'
+import Layout from "../../components/Layout"
 
+import { websiteInfo } from "../../api"
 
-export default function Tags(){
+export default function Tags({models}){
     return (
-        <div>
-            <Head>
-                <title>标签</title>
-            </Head>
+        <Layout models={models} title='标签墙'>
             这是标签页
-        </div>
+        </Layout>
     )
+}
+
+export const getStaticProps = async ()=>{
+	const res = await websiteInfo()
+  const { models } = res
+	return {
+		props:{
+			models
+		}
+	}
 }

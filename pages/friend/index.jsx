@@ -1,11 +1,21 @@
-import Head from 'next/head'
+import Layout from "../../components/Layout"
 
-export default function Friend (){
+import { websiteInfo } from "../../api"
+
+export default function Friend ({models}){
     return (
-        <div>
-            <Head>
-                <title>友人帐</title>
-            </Head>
-        </div>
+        <Layout models={models} title='友人帐'>
+            这是 友人帐 页
+        </Layout>
     )
+}
+
+export const getStaticProps = async ()=>{
+	const res = await websiteInfo()
+  const { models } = res
+	return {
+		props:{
+			models
+		}
+	}
 }

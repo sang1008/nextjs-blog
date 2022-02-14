@@ -1,11 +1,21 @@
-import Head from "next/head"
+import Layout from "../../components/Layout"
 
-export default function Categories(){
+import { websiteInfo } from "../../api"
+
+export default function Categories({models}){
     return (
-        <div>
-            <Head>
-                <title>分类</title>
-            </Head>
-        </div>
+        <Layout models={models} title='分类'>
+            这是 分类 页
+        </Layout>
     )
+}
+
+export const getStaticProps = async ()=>{
+	const res = await websiteInfo()
+  const { models } = res
+	return {
+		props:{
+			models
+		}
+	}
 }
